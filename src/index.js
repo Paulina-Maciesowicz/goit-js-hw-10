@@ -9,7 +9,7 @@ const userCountry = document.querySelector('.country-info');
 
 countryBox.addEventListener(
   'input',
-  debounce(elomelo => DEBOUNCE_DELAY)
+  debounce(elomelo, DEBOUNCE_DELAY)
 );
 function elomelo() {
   fetchCountries(countryBox.value)
