@@ -6,12 +6,15 @@ const countryBox = document.querySelector('#search-box');
 const listCountris = document.querySelector('.country-list');
 const userCountry = document.querySelector('.country-info');
 
-countryBox.addEventListener('input', event => {
-  fetchCountries(countryBox.value)
-    .then(users => renderCountries(users))
-    .catch(error => console.log('Oops, there is no country with that name'));
-  Notiflix.Notify.failure('Oops, there is no country with that name');
-});
+countryBox.addEventListener(
+  'input',
+  _.debounce(() => {
+    fetchCountries(countryBox.value)
+      .then(users => renderCountries(users))
+      .catch(error => console.log('Oops, there is no country with that name'));
+    Notiflix.Notify.failure('Oops, there is no country with that name');
+  })
+);
 
 function fetchCountries(country) {
   return fetch(
