@@ -11,12 +11,13 @@ countryBox.addEventListener(
   'input',
   debounce(() => DEBOUNCE_DELAY)
 );
-
-fetchCountries(countryBox.value)
-  .then(users => renderCountries(users))
-  .catch(error => {
-    Notiflix.Notify.failure('Oops, there is no country with that name');
-  });
+function elomelo() {
+  fetchCountries(countryBox.value)
+    .then(users => renderCountries(users))
+    .catch(error => {
+      Notiflix.Notify.failure('Oops, there is no country with that name');
+    });
+}
 
 function fetchCountries(country) {
   return fetch(
