@@ -6,7 +6,7 @@ const countryBox = document.querySelector('#search-box');
 const listCountris = document.querySelector('.country-list');
 const userCountry = document.querySelector('.country-info');
 
-fetchUsersBtn.addEventListener('click', () => {
+countryBox.addEventListener('input', event => {
   fetchCountries(countryBox.value)
     .then(users => renderCountries(users))
     .catch(error => console.log('Oops, there is no country with that name'));
@@ -23,10 +23,6 @@ function fetchCountries(country) {
     return response.json();
   });
 }
-
-countryBox.addEventListener('input', event => {
-  console.log(countryBox.value);
-});
 
 function renderCountries(country) {
   if (country.length > 10) {
