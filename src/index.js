@@ -2,9 +2,9 @@ import Notiflix from 'notiflix';
 import './css/styles.css';
 import { debounce } from 'debounce';
 const DEBOUNCE_DELAY = 300;
-const fetchUsersBtn = document.querySelector('.btn');
+// const fetchUsersBtn = document.querySelector('.btn');
 const countryBox = document.querySelector('#search-box');
-const listCountris = document.querySelector('.country-list');
+const listCountries = document.querySelector('.country-list');
 const userCountry = document.querySelector('.country-info');
 
 countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
@@ -52,7 +52,7 @@ function renderCountries(country) {
       `;
       })
       .join('');
-    listCountris.innerHTML = markup;
+    listCountries.innerHTML = markup;
     return;
   } else {
     const markup = country
@@ -66,7 +66,7 @@ function renderCountries(country) {
       `;
       })
       .join('');
-    listCountris.innerHTML = markup;
+    listCountries.innerHTML = markup;
     return;
   }
 }
