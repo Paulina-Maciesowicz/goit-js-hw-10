@@ -36,7 +36,7 @@ function renderCountries(country) {
     return;
   }
   console.log(country);
-  if ((country.length = 1)) {
+  if ((country.length === 1)) {
     const markup = country
       .map(country => {
         return `
