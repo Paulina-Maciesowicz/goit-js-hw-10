@@ -13,9 +13,6 @@ countryBox.addEventListener(
     fetchCountries(countryBox.value)
       .then(users => renderCountries(users))
       .catch(error => {
-        console.log(
-          'Too many matches found. Please enter a more specific name.'
-        );
         Notiflix.Notify.failure('Oops, there is no country with that name'),
           DEBOUNCE_DELAY;
       })
