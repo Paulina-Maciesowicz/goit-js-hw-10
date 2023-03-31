@@ -10,7 +10,7 @@ const userCountry = document.querySelector('.country-info');
 countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
 function searchCountris() {
   const abc = countryBox.value.trim();
-  console.log(abc);
+  listCountries.innerHTML = '';
   if (abc === '') return;
   {
     fetchCountries(abc)
