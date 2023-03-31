@@ -9,7 +9,7 @@ const userCountry = document.querySelector('.country-info');
 
 countryBox.addEventListener(
   'input',
-  debounce(() => {
+  debounce(fetchCountries, DEBOUNCE_DELAY) => {
     fetchCountries(countryBox.value)
       .then(users => renderCountries(users))
       .catch(error => console.log('Oops, there is no country with that name'));
