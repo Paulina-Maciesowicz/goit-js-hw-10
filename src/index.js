@@ -54,8 +54,8 @@ function renderCountries(country) {
       .join('');
     listCountris.innerHTML = markup;
     return;
-  }
-} else if { (country.length <10 )
+  
+} else if { (country.length < 10 )
 const markup = country
       .map(country => {
         return `
@@ -71,4 +71,4 @@ const markup = country
       .join('');
     listCountris.innerHTML = markup;
     return;
-}
+}}
