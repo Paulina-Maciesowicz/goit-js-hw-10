@@ -9,13 +9,10 @@ const userCountry = document.querySelector('.country-info');
 
 countryBox.addEventListener(
   'input',
-  debounce(fetchCountries, DEBOUNCE_DELAY) => {
-    fetchCountries(countryBox.value)
-      .then(users => renderCountries(users))
-      .catch(error => console.log('Oops, there is no country with that name'));
-    Notiflix.Notify.failure('Oops, there is no country with that name');
-  })
-);
+  debounce(fetchCountries(countryBox.value)
+    .then(users => renderCountries(users))
+    .catch(error => console.log('Oops, there is no country with that name')))
+Notiflix.Notify.failure('Oops, there is no country with that name'), _.DEBOUNCE_DELAY);
 
 function fetchCountries(country) {
   return fetch(
