@@ -9,8 +9,8 @@ const userCountry = document.querySelector('.country-info');
 fetchUsersBtn.addEventListener('click', () => {
   fetchCountries(countryBox.value)
     .then(users => renderCountries(users))
-    .catch(error => console.log('Memento te hominem esse'));
-  Notiflix.Notify.warning('Memento te hominem esse');
+    .catch(error => console.log('Oops, there is no country with that name'));
+  Notiflix.Notify.failure('Oops, there is no country with that name');
 });
 
 function fetchCountries(country) {
