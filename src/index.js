@@ -7,11 +7,8 @@ const countryBox = document.querySelector('#search-box');
 const listCountris = document.querySelector('.country-list');
 const userCountry = document.querySelector('.country-info');
 
-countryBox.addEventListener(
-  'input',
-  debounce(elomelo, DEBOUNCE_DELAY)
-);
-function elomelo() {
+countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
+function searchCountris() {
   fetchCountries(countryBox.value)
     .then(users => renderCountries(users))
     .catch(error => {
