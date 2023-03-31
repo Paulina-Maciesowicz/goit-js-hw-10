@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import './css/styles.css';
+import { debounce } from 'debounce';
 const DEBOUNCE_DELAY = 300;
 const fetchUsersBtn = document.querySelector('.btn');
 const countryBox = document.querySelector('#search-box');
