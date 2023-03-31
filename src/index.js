@@ -36,7 +36,7 @@ function renderCountries(country) {
     return;
   }
   console.log(country);
-  if (country.length = 1) {
+  if ((country.length = 1)) {
     const markup = country
       .map(country => {
         return `
@@ -54,16 +54,14 @@ function renderCountries(country) {
       .join('');
     listCountris.innerHTML = markup;
     return;
-  
-} else if { (country.length < 10 )
-const markup = country
+  } else {
+    country.length < 10;
+    const markup = country
       .map(country => {
         return `
           <ul><li>
             <p><b>Name</b>: ${country.name.official}</p>
-            <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${
-          country.name.official
-        }" width="100" height="300"></p>
+            <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${country.name.official}" width="100" height="300"></p>
       
           </li></ul>
       `;
@@ -71,4 +69,5 @@ const markup = country
       .join('');
     listCountris.innerHTML = markup;
     return;
-}}
+  }
+}
