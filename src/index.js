@@ -9,7 +9,8 @@ const userCountry = document.querySelector('.country-info');
 fetchUsersBtn.addEventListener('click', () => {
   fetchCountries(countryBox.value)
     .then(users => renderCountries(users))
-    .catch(error => console.log(error));
+    .catch(error => console.log('Memento te hominem esse'));
+  Notiflix.Notify.warning('Memento te hominem esse');
 });
 
 function fetchCountries(country) {
@@ -36,7 +37,7 @@ function renderCountries(country) {
     return;
   }
   console.log(country);
-  if ((country.length === 1)) {
+  if (country.length === 1) {
     const markup = country
       .map(country => {
         return `
@@ -55,7 +56,6 @@ function renderCountries(country) {
     listCountris.innerHTML = markup;
     return;
   } else {
-    country.length < 10;
     const markup = country
       .map(country => {
         return `
