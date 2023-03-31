@@ -9,14 +9,14 @@ const userCountry = document.querySelector('.country-info');
 
 countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
 function searchCountris() {
-  const abc = countryBox.value;
-  if (abc === '') {
-    fetchCountries(abc.trim())
+  const abc = countryBox.value.trim();
+  if (abc === '') return;
+  {
+    fetchCountries(abc)
       .then(users => renderCountries(users))
       .catch(error => {
         Notiflix.Notify.failure('Oops, there is no country with that name');
       });
-    return;
   }
 }
 
