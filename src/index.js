@@ -36,21 +36,39 @@ function renderCountries(country) {
     return;
   }
   console.log(country);
-  const markup = country
-    .map(country => {
-      return `
+  if (country.length = 1) {
+    const markup = country
+      .map(country => {
+        return `
           <ul><li>
             <p><b>Name</b>: ${country.name.official}</p>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
             <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${
-        country.name.official
-      }" width="100" height="300"></p>
+          country.name.official
+        }" width="100" height="300"></p>
             <p><b>Languages</b>: ${Object.values(country.languages)}</p>
           </li></ul>
       `;
-    })
-    .join('');
-  listCountris.innerHTML = markup;
-  return;
+      })
+      .join('');
+    listCountris.innerHTML = markup;
+    return;
+  }
+} else if { (country.length <10 )
+const markup = country
+      .map(country => {
+        return `
+          <ul><li>
+            <p><b>Name</b>: ${country.name.official}</p>
+            <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${
+          country.name.official
+        }" width="100" height="300"></p>
+      
+          </li></ul>
+      `;
+      })
+      .join('');
+    listCountris.innerHTML = markup;
+    return;
 }
