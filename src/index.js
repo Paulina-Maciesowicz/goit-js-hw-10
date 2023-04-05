@@ -35,12 +35,12 @@ function renderCountries(country) {
       .map(country => {
         return `
           <ul><li>
-            <p><b>Name</b>: ${country.name.official}</p>
+          <p> <img class="photoFlag" src="${country.flags.svg}" alt="Flag ${
+          country.name.official
+        }">
+            <b>${country.name.official}</b></p>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
-            <p><b>Flags</b>: <img class="photoFlag" src="${
-              country.flags.svg
-            }" alt="Flag ${country.name.official}"></p>
             <p><b>Languages</b>: ${Object.values(country.languages)}</p>
           </li></ul>
       `;
@@ -53,9 +53,8 @@ function renderCountries(country) {
       .map(country => {
         return `
           <ul><li>
-            <p><b>Name</b>: ${country.name.official}</p>
-            <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${country.name.official}" width="100" height="300"></p>
-      
+          <p> <img src="${country.flags.svg}" alt="Flag ${country.name.official}" >
+           ${country.name.official}</p>
           </li></ul>
       `;
       })
