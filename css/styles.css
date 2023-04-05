@@ -75,7 +75,7 @@ input {
 }
 
 .inputBox #search-box:focus {
-border: 2px solid rgb(43, 87, 184);
+  border: 2px solid rgb(43, 87, 184);
 }
 
 .inputBox span {
