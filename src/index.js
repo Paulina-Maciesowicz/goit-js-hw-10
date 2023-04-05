@@ -33,15 +33,16 @@ function renderCountries(country) {
   if (country.length === 1) {
     const markup = country
       .map(country => {
-        return `
+        return `         
           <ul><li>
-          <p> <img class="photoFlag" src="${country.flags.svg}" alt="Flag ${
-          country.name.official
-        }">
-            <b>${country.name.official}</b></p>
-            <p><b>Capital</b>: ${country.capital}</p>
+          <div class="flagNameTwo">
+          <img src="${country.flags.svg}" alt="Flag ${country.name.official}">
+            <b>${country.name.official}</b></p></div>
+            <div class="anotherInformations"><p><b>Capital</b>: ${
+              country.capital
+            }</p>
             <p><b>Population</b>: ${country.population}</p>
-            <p><b>Languages</b>: ${Object.values(country.languages)}</p>
+            <p><b>Languages</b>: ${Object.values(country.languages)}</p></div>
           </li></ul>
       `;
       })
@@ -53,9 +54,10 @@ function renderCountries(country) {
       .map(country => {
         return `
           <ul><li>
-          <p> <img src="${country.flags.svg}" alt="Flag ${country.name.official}" >
-           ${country.name.official}</p>
-          </li></ul>
+          <div class="flagName">
+           <img src="${country.flags.svg}" alt="Flag ${country.name.official}" >
+           ${country.name.official}
+          </div></li></ul>
       `;
       })
       .join('');
