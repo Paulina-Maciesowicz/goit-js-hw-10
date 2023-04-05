@@ -1,5 +1,5 @@
+import { fetchCountries } from './fetchCountries.js';
 import Notiflix from 'notiflix';
-import './css/styles.css';
 import { debounce } from 'debounce';
 const DEBOUNCE_DELAY = 300;
 // const fetchUsersBtn = document.querySelector('.btn');
@@ -21,17 +21,6 @@ function searchCountris() {
   }
 }
 
-function fetchCountries(country) {
-  return fetch(
-    `https://restcountries.com/v3.1/name/${country}?fields=name,capital,population,flags,languages`
-  ).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  });
-}
-
 function renderCountries(country) {
   if (country.length > 10) {
     console.log('Too many matches found. Please enter a more specific name.');
@@ -49,9 +38,9 @@ function renderCountries(country) {
             <p><b>Name</b>: ${country.name.official}</p>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
-            <p><b>Flags</b>: <img src="${country.flags.svg}" alt="Flag ${
-          country.name.official
-        }" width="100" height="300"></p>
+            <p><b>Flags</b>: <img class="photoFlag" src="${
+              country.flags.svg
+            }" alt="Flag ${country.name.official}"></p>
             <p><b>Languages</b>: ${Object.values(country.languages)}</p>
           </li></ul>
       `;

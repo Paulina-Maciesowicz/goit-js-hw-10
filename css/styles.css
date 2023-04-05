@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -7,14 +9,68 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: grey;
   color: #212121;
   line-height: 1.5;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.country-list {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#search-box {
+img {
+  width: 150px;
+  height: 100px;
+}
+
+input {
   font: inherit;
-  padding: 8px;
+  padding: 10px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox #search-box {
+  width: 100%;
+  padding: 10px;
+  background: grey;
+  border: 1px solid rgb(43, 87, 184);
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+}
+.inputBox span {
+  position: absolute;
+  left: 10;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:valid ~ span {
+  color: rgb(43, 87, 184);
+  transform: translateX(10px), translateY(-10px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: grey;
+  top: -10;
 }
